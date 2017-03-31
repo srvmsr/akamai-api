@@ -24,7 +24,7 @@ func main() {
 	client := http.Client{}
 	config := edgegrid.InitConfig("~/.edgerc", "default")
 
-	req, _ := http.NewRequest("POST", fmt.Sprintf("https://%s//network-list/v1/network_lists/%s/activate?env=staging", config.Host, listID), bytes.NewBuffer(file))
+	req, _ := http.NewRequest("POST", fmt.Sprintf("https://%s//network-list/v1/network_lists/%s/activate?env=production", config.Host, listID), bytes.NewBuffer(file))
 	req = edgegrid.AddRequestHeader(config, req)
 	resp, _ := client.Do(req)
 	byt, _ := ioutil.ReadAll(resp.Body)

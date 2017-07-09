@@ -16,7 +16,7 @@ done < $blockedIPList
 
 ## sort remove list if some duplicate entry
 sort -u -n ${removeIPList} -o ${removeIPList}
-
+cat removeIPList
 ## cleanup
 export IFS=","
 while read remove listid

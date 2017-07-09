@@ -34,4 +34,4 @@ cat <<EOF >${akamai_activate_json}
  "comments": "$(date) - Activation via API"
 }
 EOF
-go run ${akamai_activate_list} ${akamai_list_id} ${akamai_activate_json}
+go run ${akamai_activate_list} ${listid} ${akamai_activate_json}

@@ -26,4 +26,12 @@ do
     sed -i  "/^${ip},${listid}/d" ${blockedIPList}
   fi
 done < ${removeIPList}
-
+### activate the list
+cat <<EOF >${akamai_activate_json}
+{
+ "siebel-ticket-id": "",
+ "notification-recipients": [ "USERNAME" ],
+ "comments": "$(date) - Activation via API"
+}
+EOF
+go run ${akamai_activate_list} ${akamai_list_id} ${akamai_activate_json}

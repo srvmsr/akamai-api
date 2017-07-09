@@ -21,7 +21,7 @@ sort -u -n ${removeIPList} -o ${removeIPList}
 export IFS=","
 while read ip listid
 do
-  /usr/bin/go run ${delete_akamai_element} ${ip} ${listid}
+  go run ${delete_akamai_element} ${ip} ${listid}
   if [ $?  -eq 0 ]; then
     sed -i  "/^${ip},${listid}/d" ${blockedIPList}
   fi

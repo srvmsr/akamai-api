@@ -34,8 +34,4 @@ cat <<EOF >${akamai_activate_json}
  "comments": "$(date) - Activation via API"
 }
 EOF
-export IFS=","
-while read listid
-do
-go run ${akamai_activate_list} ${listid} ${akamai_activate_json}
-done
+go run ${akamai_activate_list} ${listid} ${akamai_activate_json} 

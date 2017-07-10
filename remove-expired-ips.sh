@@ -38,4 +38,4 @@ export IFS=","
 while read ip listid
 do
   go run ${akamai_activate_list} ${listid} ${akamai_activate_json} 
-done
+done < ${removeIPList}
